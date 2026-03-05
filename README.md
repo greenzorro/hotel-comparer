@@ -1,6 +1,6 @@
 # hotel-comparer
 
-[📃 Tampermonkey Script](https://greasyfork.org/en/scripts/523345-hotel-comparer)
+[📃 Tampermonkey Script](https://greasyfork.org/en/scripts/568507-携程酒店对比助手)
 
 [🌐 Chrome Web Store](https://chrome.google.com/webstore/detail/oaidennglpdmoaejlbpjfgackjnifmfd) | [🗄️ Download ZIP](https://github.com/greenzorro/hotel-comparer/raw/main/hotel-comparer.zip)
 
