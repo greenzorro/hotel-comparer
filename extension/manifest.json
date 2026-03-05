@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "hotel-comparer",
+  "version": "1.0.10",
+  "description": "Extract Ctrip hotel details, compare multiple hotels, export to Excel",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://hotels.ctrip.com/hotels/detail/*",
+        "https://hotels.ctrip.com/hotel/detail/*"
+      ],
+      "js": [
+        "lib/xlsx.full.min.js",
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
