@@ -37,8 +37,3 @@ node_modules/
 # Package manager locks (optional, uncomment if needed)
 # package-lock.json
 # yarn.lock
-
-# Extension build artifacts
-extension/
-hotel-comparer.zip
-store_assets/
