@@ -1,45 +1,29 @@
-# 携程酒店对比助手
+# hotel-comparer
 
-提取携程酒店详情页信息，支持多酒店对比，一键导出 Excel。
+[📃 Tampermonkey Script](https://greasyfork.org/en/scripts/523345-hotel-comparer)
 
-## 功能
+[🌐 Chrome Web Store](https://chrome.google.com/webstore/detail/oaidennglpdmoaejlbpjfgackjnifmfd) | [🗄️ Download ZIP](https://github.com/greenzorro/hotel-comparer/raw/main/hotel-comparer.zip)
 
-- 提取酒店信息：名称、开业/装修年份、评分、评论数、差评率
-- 提取房型信息：房间名称、面积、窗户、床型
-- 只提取完全符合筛选条件的房型
-- 多酒店数据收集，一键导出 Excel
+*Extension automatically created with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension)*
 
-## 安装
+**Compare Ctrip Hotels Efficiently**
 
-1. 安装 [Tampermonkey](https://www.tampermonkey.net/) 浏览器扩展
-2. 下载 `hotel-compare.user.js` 文件
-3. 拖拽到浏览器窗口，Tampermonkey 会自动安装
+Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, and export to Excel with one click.
 
-## 使用
+1. **Extract Hotel Info** - Hotel name, rating, total reviews, bad review rate
+2. **Extract Room Info** - Room name, area, window type, bed type, smoking info
 
-1. 打开携程酒店详情页
-2. 页面右上角出现"酒店对比助手"面板
-3. 点击「提取当前酒店」保存数据
-4. 浏览其他酒店，重复提取
-5. 点击「导出 Excel」下载对比表格
+**携程酒店对比助手**
 
-## 导出格式
+在携程酒店详情页提取酒店信息、房型信息、评论数据，支持多酒店对比，一键导出Excel表格。
 
-| 酒店名称 | 开业/装修 | 总评论 | 差评 | 差评率 | 评分 | 房间名称 | 面积 | 窗户 | 床型 |
-
-- 一个酒店多个房间时，每个房间一行
-
-## 注意
-
-- 仅支持携程酒店详情页
-- 手机端不支持
-- 数据存在浏览器 localStorage，清除浏览器数据会丢失
-- 建议及时导出 Excel 备份
-
-## 许可证
-
-MIT License
+1. **提取酒店信息** - 酒店名称、评分、评论数、差评率
+2. **提取房型信息** - 房间名称、面积、窗户、床型、吸烟信息
 
 ![](https://github.com/user-attachments/assets/86aa4796-4835-43e8-a28c-a62e7f6cee28)
 
 ![](https://github.com/user-attachments/assets/add9e753-3f5e-46f7-a82e-36ef4e353658)
+
+---
+
+Created by [Victor_42](https://victor42.work/) & [Agent Vik](https://github.com/agent-vik)

@@ -1,15 +1,25 @@
+/*
+ * File: hotel-comparer.js
+ * Project: browser-scipts
+ * Created: 2026-03-05 08:06:45
+ * Author: Victor Cheng
+ * Email: hi@victor42.work
+ * Description: Extract Ctrip hotel details, compare multiple hotels, export to Excel
+ */
+
 // ==UserScript==
-// @name         携程酒店对比助手
-// @namespace    https://victor42.work/
+// @name         hotel-comparer
+// @namespace    http://tampermonkey.net/
 // @version      1.0.10
-// @description  提取携程酒店详情页信息，支持多酒店对比，导出Excel
-// @author       Victor42
+// @description  Extract Ctrip hotel details, compare multiple hotels, export to Excel
+// @author       Victor Cheng
 // @match        https://hotels.ctrip.com/hotels/detail/*
 // @match        https://hotels.ctrip.com/hotel/detail/*
 // @icon         https://www.ctrip.com/favicon.ico
 // @require      https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js
 // @grant        none
 // @license      MIT
+// @run-at       document-end
 // ==/UserScript==
 
 (function() {
