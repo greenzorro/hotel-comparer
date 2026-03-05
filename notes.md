@@ -6,9 +6,9 @@
 
 本文档详细记录 `hotel-comparer` Tampermonkey 用户脚本的技术架构、实现细节和开发维护指南。
 
-**项目定位**: 增强携程酒店详情页使用体验的用户脚本，通过自动化数据提取、多酒店对比和Excel导出功能提升选房效率。
+**项目定位**: 垂强携程酒店详情页使用体验的用户脚本，通过自动化数据提取、多酒店对比和Excel导出功能提升选房效率。
 
-**重要提示**: 每次更新功能或携程更新前端代码后，请及时更新此备忘录。
+**重要提示**: 每次功能调整或携程更新前端代码后，请及时更新此备忘录。
 
 ### 1.2 核心价值
 
@@ -82,15 +82,6 @@ selectors: {
     reviewTag: '[class*="reviewTag-item"]'
 };
 ```
-
-**选择器稳定性评估**:
-| 选择器名称 | 选择器值 | 稳定性 | 备注 |
-|-----------|----------|--------|------|
-| mainRoomList | `[class*="mainRoomList"]` | 高 | 房型分组容器核心class |
-| roomCard | `[class*="commonRoomCard"]` | 高 | 房型卡片通用标识 |
-| roomName | `[class*="commonRoomCard-title"]` | 高 | 房间名称专用class |
-| bedInfo | `[class*="baseRoom-bedsInfo_title"]` | 中 | 可能随UI微调变化 |
-| facilityTitle | `[class*="baseRoom-facility_title"]` | 中 | 设施标签文本容器 |
 
 #### 2.2.3 数据结构
 
@@ -228,55 +219,9 @@ const match = text.match(/差评\s*\(([\d,]+)\)/);
 if (match) return parseInt(match[1].replace(/,/g, ''));
 ```
 
-### 3.2 UI模块（UI）
+### 3.2 Excel导出模块（ExcelExporter）
 
-#### 3.2.1 固定宽度面板设计
-
-**设计**: UI面板固定宽度200px，内部文字允许换行，避免随内容伸缩。
-
-**实现**:
-```css
-#hotel-compare-panel {
-    width: 200px;           /* 固定宽度 */
-}
-
-.hotel-compare-btn {
-    white-space: normal;       /* 允许换行 */
-    line-height: 1.4;        /* 行高提升可读性 */
-}
-```
-
-#### 3.2.2 纯色按钮设计
-
-**设计**: 使用纯色按钮，去掉渐变效果和所有emoji图标，界面简洁清晰。
-
-**按钮配色**:
-| 按钮类型 | 背景色 | 用途 |
-|----------|--------|------|
-| primary | `#667eea` | 提取当前酒店 |
-| success | `#11998e` | 导出Excel |
-| danger | `#f5f5f5` | 清空数据 |
-
-#### 3.2.3 面板初始化延迟
-
-**设计**: 页面加载时DOM未完全渲染，选择器查询失败。设置1秒延迟确保DOM就绪。
-
-**实现**:
-```javascript
-function init() {
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => UI.init(), 1000);  // 延迟1秒
-        });
-    } else {
-        setTimeout(() => UI.init(), 1000);
-    }
-}
-```
-
-### 3.3 Excel导出模块（ExcelExporter）
-
-#### 3.3.1 数据展开策略
+#### 3.2.1 数据展开策略
 
 **设计**: 一个酒店有多个房型，每个房型需要一行数据。酒店基本信息在每行重复。
 
@@ -300,7 +245,7 @@ hotels.forEach(hotel => {
 });
 ```
 
-#### 3.3.2 列宽配置
+#### 3.2.2 列宽配置
 
 **列宽设置**（单位：字符数）:
 ```javascript
@@ -320,7 +265,7 @@ ws['!cols'] = [
 ];
 ```
 
-#### 3.3.3 文件命名策略
+#### 3.2.3 文件命名策略
 
 **格式**: `酒店对比_YYYYMMDD.xlsx`
 
@@ -528,11 +473,11 @@ calcBadCommentRate(total, bad) {
 }
 ```
 
-### 6.4 版本设置流程
+### 6.4 版本发布流程
 
 1. **代码完成**: 完成功能开发
 2. **本地测试**: 在Tampermonkey调试模式下验证所有功能
-3. **版本号设置**: 设置 `@version` 字段（如 `1.0.11`）
+3. **版本号发布**: 设置 `@version` 字段（如 `1.0.11`）
 4. **文档同步**: 记录变更到 `notes.md`
 5. **发布**: 上传到Greasy Fork或GitHub，更新说明文档
 
