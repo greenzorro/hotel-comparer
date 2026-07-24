@@ -2,8 +2,6 @@
 
 *Chrome extension builds of this script are produced with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension).*
 
-Ask an agent to install it (see `# For Agent`). Then browse Ctrip hotel detail pages and use the on-page extract / compare / export controls.
-
 **Compare Ctrip Hotels Efficiently**
 
 Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, and export to Excel with one click.
