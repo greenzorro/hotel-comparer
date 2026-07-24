@@ -27,3 +27,36 @@ Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, an
 ---
 
 Created by [Victor42](https://victor42.work/) & [Agent Vik](https://github.com/agent-vik)
+
+# For Agent
+
+Install this Ctrip hotel comparer, verify extraction on a hotel detail page, optionally export once, then hand comparison shopping to the human.
+
+This tool runs in the browser on Ctrip hotel detail pages. Login/session cookies may be required by the site.
+
+## Prerequisites
+
+- Chromium-based browser + Tampermonkey or unpacked extension
+- Pages matching:
+  - `https://hotels.ctrip.com/hotels/detail/*`
+  - `https://hotels.ctrip.com/hotel/detail/*`
+
+## Steps
+
+1. Install from root `hotel-comparer.js` (GreasyFork) **or** `hotel-comparer.zip` / `extension/` via Load unpacked.
+2. **One handoff:** human approves install; signs into Ctrip if the site blocks anonymous detail content.
+3. Open a hotel detail URL; confirm the script’s extract / compare UI is injected.
+4. Run the primary path once: extract current hotel → open a second hotel detail → extract again → export Excel if that control exists.
+5. Verify: local comparison list non-empty and/or an `.xlsx` download appeared. Then stop.
+
+## Hand off to the human
+
+- Which hotels to compare and travel decisions
+- Ctrip account / captcha / SMS challenges
+
+## Red lines
+
+- Do not scrape or store Ctrip passwords
+- Do not broaden `@match` off hotel detail pages
+- Ctrip DOM changes often—fix selectors using `notes.md`, do not silently ship huge speculative patches
+- No extension republish unless asked
