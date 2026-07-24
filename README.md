@@ -1,10 +1,8 @@
 # hotel-comparer
 
-[📃 Tampermonkey Script](https://greasyfork.org/en/scripts/568507-携程酒店对比助手)
+*Chrome extension builds of this script are produced with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension).*
 
-[🌐 Chrome Web Store](https://chrome.google.com/webstore/detail/oaidennglpdmoaejlbpjfgackjnifmfd) | [🗄️ Download ZIP](https://github.com/greenzorro/hotel-comparer/raw/main/hotel-comparer.zip)
-
-*Extension automatically created with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension)*
+Ask an agent to install it (see `# For Agent`). Then browse Ctrip hotel detail pages and use the on-page extract / compare / export controls.
 
 **Compare Ctrip Hotels Efficiently**
 
@@ -15,7 +13,7 @@ Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, an
 
 **携程酒店对比助手**
 
-在携程酒店详情页提取酒店信息、房型信息、评论数据，支持多酒店对比，一键导出Excel表格。
+在携程酒店详情页提取酒店信息、房型信息、评论数据，支持多酒店对比，一键导出 Excel。
 
 1. **提取酒店信息** - 酒店名称、评分、评论数、差评率
 2. **提取房型信息** - 房间名称、面积、窗户、床型、吸烟信息
@@ -43,7 +41,7 @@ This tool runs in the browser on Ctrip hotel detail pages. Login/session cookies
 
 ## Steps
 
-1. Install from root `hotel-comparer.js` (GreasyFork) **or** `hotel-comparer.zip` / `extension/` via Load unpacked.
+1. Install from root `hotel-comparer.js` or https://greasyfork.org/en/scripts/568507-携程酒店对比助手, **or** load `hotel-comparer.zip` / `extension/` unpacked.
 2. **One handoff:** human approves install; signs into Ctrip if the site blocks anonymous detail content.
 3. Open a hotel detail URL; confirm the script’s extract / compare UI is injected.
 4. Run the primary path once: extract current hotel → open a second hotel detail → extract again → export Excel if that control exists.
