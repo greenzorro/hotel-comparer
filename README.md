@@ -26,6 +26,8 @@ Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, an
 
 Created by [Victor42](https://victor42.work/) & [Agent Vik](https://github.com/agent-vik)
 
+---
+
 # For Agent
 
 Install this Ctrip hotel comparer, verify extraction on a hotel detail page, optionally export once, then hand comparison shopping to the human.
