@@ -1,6 +1,10 @@
 # hotel-comparer
 
-*Chrome extension builds of this script are produced with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension).*
+[📃 Tampermonkey Script](https://greasyfork.org/en/scripts/568507-携程酒店对比助手)
+
+[🌐 Chrome Web Store](https://chrome.google.com/webstore/detail/oaidennglpdmoaejlbpjfgackjnifmfd) | [🗄️ Download ZIP](https://github.com/greenzorro/hotel-comparer/raw/main/hotel-comparer.zip)
+
+*Extension automatically created with [browser-script-to-extension](https://github.com/greenzorro/browser-script-to-extension)*
 
 **Compare Ctrip Hotels Efficiently**
 
