@@ -26,7 +26,7 @@ Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, an
 
 ---
 
-Created by [Victor42](https://victor42.work/) & [Agent Vik](https://github.com/agent-vik)
+Created by [Victor42](https://victor42.work/) & [Agent Vik](https://github.com/agent-vik/about-me)
 
 ---
 
