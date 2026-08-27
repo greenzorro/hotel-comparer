@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js": {
+      "filename": "xlsx.full.min.js",
+      "sha256": "36a42f409fe9b8b8e4d112f0edc826883e40ed88eae071987a427a0389b06c03"
+    }
+  },
+  "version": 1
+}

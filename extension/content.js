@@ -133,9 +133,9 @@
          */
         getUpdateYear() {
             for (const sel of this.selectors.hotelInfo) {
-                const container = document.querySelector(sel);
-                if (container) {
-                    const text = container.innerText;
+                const containers = document.querySelectorAll(sel);
+                for (const container of containers) {
+                    const text = container.innerText || '';
                     const openMatch = text.match(/开业[：:]\s*(\d{4})/);
                     const decoMatch = text.match(/装修[：:]\s*(\d{4})/);
                     
@@ -146,6 +146,15 @@
                     if (maxYear > 0) return maxYear.toString();
                 }
             }
+            // 兜底：从页面内嵌数据（SSR/Next.js script 标签）中提取
+            const scripts = Array.from(document.querySelectorAll('script')).map(s => s.innerText).join('\n');
+            const openMatch = scripts.match(/开业[：:]\s*(\d{4})/);
+            const decoMatch = scripts.match(/装修[：:]\s*(\d{4})/);
+            const openYear = openMatch ? parseInt(openMatch[1]) : 0;
+            const decoYear = decoMatch ? parseInt(decoMatch[1]) : 0;
+            const maxYear = Math.max(openYear, decoYear);
+            if (maxYear > 0) return maxYear.toString();
+
             return '';
         },
 
