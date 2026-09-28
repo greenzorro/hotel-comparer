@@ -20,6 +20,10 @@ Extract hotel details from Ctrip hotel detail pages, compare multiple hotels, an
 1. **提取酒店信息** - 酒店名称、评分、评论数、差评率
 2. **提取房型信息** - 房间名称、面积、窗户、床型、吸烟信息
 
+> **Part of my travel-planning methodology** — This is one step in a [systematic workflow for planning trips](https://victor42.eth.limo/post-en/3642/), used during lodging selection to shortlist hotels.
+>
+> **旅行攻略方法论的一环** — 本插件是我[系统化旅行攻略制作方法](https://victor42.eth.limo/post/3642/)中的一步，用在「住宿选址」环节筛选酒店。
+
 ![](https://github.com/user-attachments/assets/86aa4796-4835-43e8-a28c-a62e7f6cee28)
 
 ![](https://github.com/user-attachments/assets/add9e753-3f5e-46f7-a82e-36ef4e353658)
